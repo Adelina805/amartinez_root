@@ -1,0 +1,38 @@
+/* CSS GOES HERE */
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+section {
+    padding: 60px 20px;
+}
+section:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.container {
+    width: 100%;
+    max-width: 960px;
+    text-align: left;
+    margin: 0 auto;
+}
+h1 {
+    font-size: 3em;
+}
+section .gallery {
+    width: 100%;
+}
+section .gallery img {
+    width: 32%;
+}
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+}
