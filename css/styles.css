@@ -20,6 +20,35 @@ section-image {
   width: 300px;
   height: 400px;
 }
+.section-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.section-label {
+  margin: 0;
+}
+.section-date {
+  margin: 0;
+  margin-left: auto;
+}
+@media (max-width: 600px) {
+  .section-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section-date {
+    margin-left: 0;
+    margin-top: 4px;
+  }
+}
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  margin-top: 8px;
+}
 .container {
   width: 100%;
   max-width: 960px;
@@ -80,4 +109,15 @@ footer {
 .nav-links-left {
   display: flex;
   gap: 20px;
+}
+.section-courselist {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .section-courselist {
+    flex-direction: column;
+  }
 }
