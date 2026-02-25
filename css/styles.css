@@ -1,6 +1,7 @@
 /* CSS GOES HERE */
 html {
   font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
