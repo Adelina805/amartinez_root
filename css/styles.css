@@ -1,6 +1,8 @@
+/* HTML / BODY / CONTAINER */
 html {
   font-family: Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
+  color: #0047a0;
 }
 body {
   margin: 0;
@@ -10,68 +12,14 @@ body {
   font: inherit;
   vertical-align: baseline;
 }
-section {
-  padding: 60px 20px;
-}
-section:nth-child(even) {
-  background-color: #f2f2f2;
-}
-section-image {
-  width: 300px;
-  height: 400px;
-}
-.section-title {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-}
-.section-label {
-  margin: 0;
-}
-.section-date {
-  margin: 0;
-  margin-left: auto;
-}
-@media (max-width: 600px) {
-  .section-title {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .section-date {
-    margin-left: 0;
-    margin-top: 4px;
-  }
-}
-
-/* DIVIDER LINE  */
-.divider {
-  width: 100%;
-  height: 1px;
-  background-color: black;
-  margin-top: 8px;
-}
 .container {
   width: 100%;
-  max-width: 960px;
+  max-width: 1200px;
   text-align: left;
   margin: 0 auto;
 }
-h1 {
-  font-size: 3em;
-  text-align: center;
-}
-h2 {
-  font-size: 2em;
-  text-align: center;
-}
-section .gallery {
-  width: 100%;
-}
-section .gallery img {
-  width: 32%;
-}
 
-/* SHARED NAVIGATION LAYOUTS */
+/* NAVIGATION BAR LAYOUT */
 .site-header,
 .site-footer {
   background: #0047a0;
@@ -187,14 +135,93 @@ section .gallery img {
   text-decoration: underline;
 }
 
+/* SECTIONS */
+.timeline-section {
+  padding: 60px 20px;
+}
+.timeline-section--light {
+  background-color: #E5EDF7;
+}
+.timeline-section--dark {
+  background-color: #CCDAEE;
+}
+.section-content {
+  display: flex;
+  gap: 40px;
+  margin-top: 32px;
+  align-items: flex-start;
+}
+.section-left {
+  flex: 0 0 300px;
+  max-width: 300px;
+}
+.section-right {
+  flex: 1;
+  min-width: 0;
+}
+.section-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.section-label {
+  margin: 0;
+}
+.section-date {
+  margin: 0;
+  margin-left: auto;
+}
+.section-quote {
+  font-style: italic;
+  font-size: 36px;
+}
 .section-courselist {
+  font-size: 14px;
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
+  margin-top: 24px;
 }
 
-@media (max-width: 768px) {
-  .section-courselist {
+/* SECTION GALLERY */
+section .gallery {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+section .gallery-track {
+  display: flex;
+  transition: transform 250ms ease;
+  will-change: transform;
+}
+section .gallery img.section-image {
+  flex: 0 0 100%;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .section-content {
     flex-direction: column;
   }
+}
+@media (max-width: 600px) {
+  .section-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .section-date {
+    margin-left: 0;
+    margin-top: 4px;
+  }
+}
+
+/* DIVIDER LINE  */
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #0047a0;
+  margin-top: 8px;
 }
