@@ -4,7 +4,8 @@ class SiteFooter extends HTMLElement {
     const year = new Date().getFullYear();
 
     this.innerHTML = `
-      <footer class="footer">
+      <footer class="site-footer">
+        <div class="bar-inner">
         <div class="nav-links-left">
           <a href="index.html">Timeline</a>
           <a href="about.html">About</a>
@@ -14,10 +15,11 @@ class SiteFooter extends HTMLElement {
           <a href="https://github.com/Adelina805/amartinez_root" target="_blank">
             ©Adelina ${year}
           </a>
-          <a href="#" class="back-to-top">Back to top</a>
+          <a href="#" class="scroll-to-top">scroll to top</a>
           <img src="stars/Star-Icon.svg"
                alt="Light / Dark Mode Toggle Icon"
                id="theme-toggle" />
+        </div>
         </div>
       </footer>
     `;
