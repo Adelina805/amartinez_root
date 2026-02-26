@@ -11,12 +11,33 @@ body {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  /* background-color: aqua; DELETE THIS */
 }
 .container {
   width: 100%;
-  max-width: 1200px;
-  text-align: left;
+  max-width: 1250px;
+  padding: 60px 0;
   margin: 0 auto;
+  /* background-color: rebeccapurple; DELETE THIS */
+}
+.page-content {
+  border: #0047a0 1.5px solid;
+  margin: 0 10px;
+}
+p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+a {
+  color: #0047a0;
+}
+h1 {
+  font-size: 64px;
+  font-weight: normal;
+  text-align: center;
+  margin: 0;
 }
 
 /* NAVIGATION BAR LAYOUT */
@@ -162,12 +183,20 @@ body {
 .section-title {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: flex-end;
 }
 .section-label {
   margin: 0;
+  font-size: 32px;
+  font-weight: 400;
+  padding: 5px 20px;
+  justify-content: center;
+  background-color: #0047a0;
+  color: #E5EDF7;
 }
 .section-date {
+  font-size: 22px;
+  font-weight: normal;
   margin: 0;
   margin-left: auto;
 }
@@ -221,7 +250,13 @@ section .gallery img.section-image {
 /* DIVIDER LINE  */
 .divider {
   width: 100%;
-  height: 1px;
+  height: 1.5px;
   background-color: #0047a0;
-  margin-top: 8px;
+  margin-top: 20px;
+}
+
+/* CONTACT PAGE */
+.note {
+  font-size: 22px;
+  text-align: center;
 }
