@@ -13,7 +13,6 @@ body {
   grid-template-rows: auto 1fr auto;
   background-color: #E5EDF7;
   overflow-x: hidden;
-  /* background-color: aqua; DELETE THIS */
 }
 body::before{
   content:"";
@@ -26,6 +25,12 @@ body::before{
   border-right: 1.5px solid #0047a0;
   pointer-events:none;
   z-index: 9999;
+}
+@media (max-width: 900px) {
+  body::before {
+    left: 10px;
+    right: 10px;
+  }
 }
 .container {
   width: min(1250px, calc(100% - 40px)); /* 20px left + 20px right */
@@ -62,7 +67,7 @@ h1 {
   height: 100%;
   max-width: 1250px;
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -147,7 +152,7 @@ h1 {
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
-    padding: 20px 28px;
+    padding: 20px 20px;
   }
 }
 
