@@ -42,8 +42,7 @@ body::before{
 p {
   font-size: 20px;
   line-height: 1.5;
-  margin-top: 0;
-  margin-bottom: 16px;
+  margin: 0px;
 }
 a {
   color: #0047a0;
@@ -54,6 +53,12 @@ h1 {
   text-align: center;
   margin-top: 0;
   margin-bottom: 60px;
+}
+h2 {
+  font-size: 32px;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 0;
 }
 
 /* NAVIGATION BAR LAYOUT */
@@ -204,6 +209,9 @@ h1 {
 .section-right {
   flex: 1;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 .section-title {
   display: flex;
@@ -229,12 +237,18 @@ h1 {
   font-style: italic;
   font-size: 36px;
 }
-.section-courselist {
+.section-courselist-light,
+.section-courselist-dark {
   font-size: 14px;
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
-  margin-top: 24px;
+}
+.section-courselist-light {
+  background-color: #CCDAEE;
+}
+.section-courselist-dark {
+  background-color: #E5EDF7;
 }
 
 /* SECTION GALLERY */
@@ -318,4 +332,44 @@ section .gallery img.section-image {
 .faq-section {
   background-color: #CCDAEE;
   width: 100%;
+}
+.faq-item {
+  border: 1.5px solid #0047a0;
+  background: transparent;
+  margin: 18px 0;
+  overflow: hidden;
+}
+.faq-item > summary {
+  list-style: none;
+}
+.faq-item > summary::-webkit-details-marker {
+  display: none;
+}
+.faq-summary {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 22px;
+  color: #0047a0;
+  font-size: 22px;
+  user-select: none;
+}
+.faq-icon {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+}
+.faq-star {
+  width: 25px;
+  height: 25px;
+  display: block;
+}
+.faq-chevron {
+  width: 25px;
+  height: 25px;
+  margin-left: auto;
+}
+.faq-content {
+  padding: 0 20px 18px 58px;
 }
