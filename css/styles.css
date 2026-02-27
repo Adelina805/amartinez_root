@@ -11,11 +11,11 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  background-color: #E5EDF7;
+  background-color: #e5edf7;
   overflow-x: hidden;
 }
-body::before{
-  content:"";
+body::before {
+  content: "";
   position: fixed;
   top: 0;
   bottom: 0;
@@ -23,7 +23,7 @@ body::before{
   right: 20px;
   border-left: 1.5px solid #0047a0;
   border-right: 1.5px solid #0047a0;
-  pointer-events:none;
+  pointer-events: none;
   z-index: 9999;
 }
 @media (max-width: 900px) {
@@ -43,6 +43,7 @@ p {
   font-size: 20px;
   line-height: 1.7;
   margin: 0px;
+  max-width: 800px;
 }
 a {
   color: #0047a0;
@@ -83,14 +84,16 @@ h2 {
 .site-header {
   height: 60px;
 }
- .site-header a {
+.site-header a {
   color: #fff;
   text-decoration: none;
   font-size: 16px;
   font-weight: 600;
   padding: 8px 2px;
   opacity: 0.95;
-  transition: opacity 160ms ease, transform 160ms ease;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
 }
 .site-header a:hover {
   opacity: 0.8;
@@ -146,7 +149,7 @@ h2 {
 #theme-toggle:hover {
   opacity: 0.8;
 }
-#theme-toggle:active{
+#theme-toggle:active {
   transform: translateY(1px);
 }
 
@@ -163,13 +166,13 @@ h2 {
 }
 
 /* LANDING PAGE */
-.landing{
+.landing {
   min-height: 80vh;
   display: flex;
   align-items: center;
   padding: clamp(24px, 4vw, 64px) 0;
 }
-.landing-container{
+.landing-container {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -180,30 +183,30 @@ h2 {
   height: 100%;
   width: 100%;
 }
-.landing-column-right{
+.landing-column-right {
   display: grid;
   justify-items: right;
 }
-.landing-title{
+.landing-title {
   text-align: left;
 }
-.landing-content{
+.landing-content {
   height: 100%;
   width: 100%;
   display: grid;
   justify-items: center;
   gap: 60px;
 }
-.landing-cta-button a{
+.landing-cta-button a {
   font-size: 32px;
   text-decoration: none;
   padding-top: auto;
 }
-.landing-cta-button a:hover{
+.landing-cta-button a:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
-.landing-image{
+.landing-image {
   width: 100%;
   display: grid;
   place-items: center;
@@ -216,24 +219,24 @@ h2 {
   display: block;
 }
 
-@media (max-width: 820px){
-  .landing-container{
+@media (max-width: 820px) {
+  .landing-container {
     grid-template-columns: 1fr;
     gap: 32px;
   }
-  .landing-column-left{
+  .landing-column-left {
     max-width: none;
   }
-  .landing-column-right{
+  .landing-column-right {
     justify-items: left;
   }
-  #spinning-star{
+  #spinning-star {
     width: min(280px, 70%);
   }
 }
 
 /* TABLE OF CONTENTS */
-nav[aria-label="table-of-contents"] ul{
+nav[aria-label="table-of-contents"] ul {
   padding: 0;
   margin: 0;
 }
@@ -256,17 +259,18 @@ nav[aria-label="table-of-contents"] ul{
 .timeline-section {
   width: 100%;
   display: block;
+  padding-bottom: 20px;
 }
 .timeline-section--light {
-  background-color: #E5EDF7;
+  background-color: #e5edf7;
 }
 .timeline-section--dark {
-  background-color: #CCDAEE;
+  background-color: #ccdaee;
 }
 .section-content {
   display: flex;
   gap: 40px;
-  margin-top: 32px;
+  margin-top: 50px;
   align-items: flex-start;
 }
 .section-left {
@@ -278,7 +282,7 @@ nav[aria-label="table-of-contents"] ul{
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 .section-title {
   display: flex;
@@ -292,7 +296,7 @@ nav[aria-label="table-of-contents"] ul{
   padding: 5px 20px;
   justify-content: center;
   background-color: #0047a0;
-  color: #E5EDF7;
+  color: #e5edf7;
 }
 .section-date {
   font-size: 22px;
@@ -309,18 +313,19 @@ nav[aria-label="table-of-contents"] ul{
   font-size: 14px;
   display: flex;
   flex-wrap: wrap;
+  max-width: 800px;
 }
 .section-courselist-dark ul,
-.section-courselist-light ul{
+.section-courselist-light ul {
   list-style: none;
   margin: 0;
   padding: 20px;
 }
 .section-courselist-light {
-  background-color: #CCDAEE;
+  background-color: #ccdaee;
 }
 .section-courselist-dark {
-  background-color: #E5EDF7;
+  background-color: #e5edf7;
 }
 @media (max-width: 900px) {
   .section-content {
@@ -368,7 +373,7 @@ section .gallery img.section-image {
 /* ABOUT / CONTACT PAGE COLUMNS */
 .about-container,
 .contact-container {
-    min-height: 80vh;
+  min-height: 75vh;
 }
 .column-layout {
   display: grid;
@@ -400,7 +405,7 @@ section .gallery img.section-image {
 
 /* FAQ SECTION */
 .faq-section {
-  background-color: #CCDAEE;
+  background-color: #ccdaee;
   width: 100%;
 }
 .faq-section h2 {
