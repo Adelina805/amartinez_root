@@ -5,6 +5,8 @@ html {
   background-color: #0047a0;
   color: #0047a0;
   overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
 }
 body {
   margin: 0;
