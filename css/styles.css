@@ -221,6 +221,22 @@ h2 {
   max-width: 90%;
   height: auto;
   color: var(--primary-COLOR);
+  transform-origin: center;
+  animation: spin-star 40s linear infinite reverse;
+  scale: 1;
+  transition: scale 180ms ease;
+}
+
+#spinning-star:hover {
+  scale: 1.06;
+}
+@keyframes spin-star {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* TABLE OF CONTENTS */
