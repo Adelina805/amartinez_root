@@ -5,6 +5,9 @@ class SiteHeader extends HTMLElement {
 
     this.innerHTML = `
       <header class="site-header">
+        <div class="scroll-progress" aria-hidden="true">
+          <span class="scroll-progress-fill"></span>
+        </div>
         <div class="bar-inner">
         <div class="nav-links-left">
           <a href="index.html" class="${current === "home" ? "active" : ""}">Timeline</a>

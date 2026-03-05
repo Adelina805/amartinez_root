@@ -42,6 +42,22 @@ function toggleTheme() {
   localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
 }
 
+function updateScrollProgress() {
+  const progressFill = document.querySelector(".scroll-progress-fill");
+  if (!progressFill) {
+    return;
+  }
+
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const scrollHeight =
+    document.documentElement.scrollHeight - window.innerHeight;
+
+  const progress =
+    scrollHeight > 0 ? Math.min((scrollTop / scrollHeight) * 100, 100) : 0;
+
+  progressFill.style.width = `${progress}%`;
+}
+
 // Mouse-following stars effect
 const starsContainer = document.getElementById("stars-container");
 const stars = [];
@@ -113,6 +129,7 @@ document.addEventListener("mousemove", (e) => {
 });
 document.addEventListener("DOMContentLoaded", () => {
   applyTheme(getInitialTheme());
+  updateScrollProgress();
   updateStars(); // Start the animation loop
 
   // PAGE LOAD ANIMATIONS
@@ -124,6 +141,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 300);
   }
 });
+
+window.addEventListener("scroll", updateScrollProgress, { passive: true });
+window.addEventListener("resize", updateScrollProgress);
 
 // smooth scrolling + theme toggle
 document.addEventListener("click", function (e) {
