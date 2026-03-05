@@ -114,6 +114,15 @@ document.addEventListener("mousemove", (e) => {
 document.addEventListener("DOMContentLoaded", () => {
   applyTheme(getInitialTheme());
   updateStars(); // Start the animation loop
+
+  // PAGE LOAD ANIMATIONS
+  // Rotate in spinning star
+  const spinningstar = document.getElementById("spinning-star");
+  if (spinningstar) {
+    setTimeout(() => {
+      spinningstar.classList.add("animate-in");
+    }, 300);
+  }
 });
 
 // smooth scrolling + theme toggle

@@ -275,6 +275,57 @@ h2 {
     transform: rotate(360deg);
   }
 }
+
+/* PAGE LOAD ANIMATIONS */
+
+/* Headline fade-in animation */
+@keyframes fade-in-headline {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.landing-title.animate-in {
+  animation: fade-in-headline 1s ease-out forwards;
+}
+
+/* Star entrance animation - rotate and scale in */
+@keyframes star-rotate-in {
+  from {
+    opacity: 0;
+    transform: rotate(180deg) scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+#spinning-star.animate-in {
+  animation:
+    star-rotate-in 1s ease-out forwards,
+    spin-star 40s linear infinite reverse 1.3s;
+}
+
+/* Timeline section slide-in animations */
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.timeline-section.animate-in {
+  animation: slide-in-left 0.8s ease-out forwards;
+}
+
 /* TABLE OF CONTENTS */
 nav[aria-label="table-of-contents"] ul {
   padding: 0;
