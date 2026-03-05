@@ -5,6 +5,7 @@
   --primary-COLOR: #0047a0;
   --primary-TEXT1: #0047a0;
   --primary-TEXT2: #e5edf7;
+  --primary-TEXT3: #00387c;
   --form-placeholder: rgba(0, 71, 160, 0.6);
   --star-glow-rgb: 0, 71, 160;
 }
@@ -14,7 +15,8 @@ html[data-theme="dark"] {
   --primary-COLOR: #e5edf7;
   --primary-TEXT1: #e5edf7;
   --primary-TEXT2: #0047ab;
-  --form-placeholder: rgba(229, 237, 247, 0.65);
+  --primary-TEXT3: #f2f8ff;
+  --form-placeholder: rgba(245, 250, 255, 0.99);
   --star-glow-rgb: 229, 237, 247;
 }
 html {
@@ -58,6 +60,7 @@ p {
   line-height: 1.8;
   margin: 0px;
   max-width: 800px;
+  color: var(--primary-TEXT3);
 }
 a {
   color: var(--primary-TEXT1);
