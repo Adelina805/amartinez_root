@@ -21,13 +21,13 @@
   /* contact page stuff */
   .column-layout {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 60px;
   }
   .contact-form {
     max-width: 100%;
   }
   .form-actions {
-    justify-content: flex-start;
+    justify-content: flex-end;
   }
 
   /* section stuff */
@@ -48,7 +48,10 @@
 @media (max-width: 820px) {
   .landing-container {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 60px;
+  }
+  .landing-content {
+    gap: 60px;
   }
   .landing-column-left {
     max-width: none;
