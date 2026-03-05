@@ -532,3 +532,32 @@ section .gallery img.section-image {
 .submit-button:hover {
   filter: brightness(0.8);
 }
+
+/* FLYING STARS */
+#stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.flying-star {
+  position: fixed;
+  font-size: 1.2rem;
+  pointer-events: none;
+  opacity: 0.8;
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}

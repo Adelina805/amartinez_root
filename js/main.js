@@ -42,8 +42,78 @@ function toggleTheme() {
   localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
 }
 
+// Mouse-following stars effect
+const starsContainer = document.getElementById("stars-container");
+const stars = [];
+let mouseX = 0;
+let mouseY = 0;
+
+const STAR_SYMBOLS = ["✦", "✧"];
+const MAX_STARS = 50; // Limit the number of stars on screen for performance
+
+class Star {
+  constructor(x, y) {
+    this.element = document.createElement("span");
+    this.element.className = "flying-star";
+    this.element.textContent =
+      STAR_SYMBOLS[Math.floor(Math.random() * STAR_SYMBOLS.length)];
+    this.x = x;
+    this.y = y;
+    this.targetX = x;
+    this.targetY = y;
+    this.life = 300; // milliseconds lifespan
+    this.startTime = Date.now();
+    this.vx = (Math.random() - 0.5) * 3; // random velocity
+    this.vy = (Math.random() - 0.5) * 3;
+    starsContainer.appendChild(this.element);
+    stars.push(this);
+  }
+
+  update() {
+    const elapsed = Date.now() - this.startTime;
+    const progress = elapsed / this.life;
+
+    // Move towards target with faster easing
+    this.x += (this.targetX - this.x) * 0.35;
+    this.y += (this.targetY - this.y) * 0.35;
+
+    // Add more pronounced drift
+    this.x += this.vx * 0.8;
+    this.y += this.vy * 0.8;
+
+    // Update opacity based on lifespan
+    const opacity = Math.max(0, 1 - progress);
+    this.element.style.opacity = opacity * 0.8;
+    this.element.style.transform = `translate(${this.x}px, ${this.y}px) scale(${1 - progress * 0.6})`;
+
+    return progress < 1;
+  }
+  remove() {
+    starsContainer.removeChild(this.element);
+  }
+}
+function createStar() {
+  if (stars.length < MAX_STARS) {
+    new Star(mouseX, mouseY);
+  }
+}
+function updateStars() {
+  for (let i = stars.length - 1; i >= 0; i--) {
+    if (!stars[i].update()) {
+      stars[i].remove();
+      stars.splice(i, 1);
+    }
+  }
+  requestAnimationFrame(updateStars);
+}
+document.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  createStar();
+});
 document.addEventListener("DOMContentLoaded", () => {
   applyTheme(getInitialTheme());
+  updateStars(); // Start the animation loop
 });
 
 // smooth scrolling + theme toggle
