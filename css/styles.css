@@ -309,7 +309,7 @@ nav[aria-label="table-of-contents"] ul {
 .toc-item {
   font-size: 22px;
   line-height: 1.5;
-  display: block;
+  display: inline-block;
   text-decoration: none;
   margin-bottom: 6px;
 }
@@ -318,7 +318,26 @@ nav[aria-label="table-of-contents"] ul {
   margin-right: 4px;
 }
 .toc-title {
-  text-decoration: underline;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  border-bottom: 2px solid currentColor;
+}
+.toc-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 300ms ease-out;
+}
+.toc-item:hover .toc-title {
+  border-bottom-color: transparent;
+}
+.toc-item:hover .toc-title::after {
+  width: 100%;
 }
 
 /* SECTIONS */
