@@ -139,6 +139,16 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       spinningstar.classList.add("animate-in");
     }, 300);
+
+    // SPINNING STAR PULSE ON CLICK
+    spinningstar.addEventListener("click", () => {
+      // Pulse using scale transition (doesn't interrupt spin animation)
+      spinningstar.style.scale = "1.1";
+
+      setTimeout(() => {
+        spinningstar.style.scale = "1";
+      }, 140);
+    });
   }
 });
 
