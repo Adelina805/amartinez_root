@@ -124,6 +124,39 @@
   }
 }
 
+/* SECTION LAYOUTS */
+@media (max-width: 1000px) {
+  .section-content {
+    grid-template-columns: 300px 1fr;
+    grid-template-areas:
+      "left quote"
+      "left body"
+      "courses courses";
+  }
+
+  .section-left {
+    max-width: 300px;
+  }
+  .section-courselist-light,
+  .section-courselist-dark {
+    max-width: 100%;
+  }
+}
+@media (max-width: 750px) {
+  .section-content {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "left"
+      "quote"
+      "body"
+      "courses";
+  }
+
+  .section-left {
+    max-width: 100%;
+  }
+}
+
 /* FOOTER */
 @media (max-width: 670px) {
   .site-footer {
