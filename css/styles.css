@@ -471,25 +471,6 @@ nav[aria-label="table-of-contents"] ul {
   background-color: var(--primary-BG1);
 }
 
-/* SECTION GALLERY */
-section .gallery {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-}
-section .gallery-track {
-  display: flex;
-  transition: transform 250ms ease;
-  will-change: transform;
-}
-section .gallery img.section-image {
-  flex: 0 0 100%;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-}
-
 /* DIVIDER LINE  */
 .divider {
   width: 100%;
@@ -713,4 +694,68 @@ section .gallery img.section-image {
   50% {
     opacity: 0.4;
   }
+}
+
+/* SECTION GALLERY (Swiper) */
+section .gallery.swiper {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+section .swiper-wrapper {
+  align-items: center;
+}
+section .swiper-slide {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+section img.section-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+section .swiper-button-prev,
+section .swiper-button-next {
+  color: var(--primary-COLOR);
+  background: transparent;
+  padding: 4px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    background-color 180ms ease,
+    opacity 180ms ease;
+  border: none;
+}
+
+section .gallery.swiper:hover .swiper-button-prev,
+section .gallery.swiper:hover .swiper-button-next {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+section .swiper-button-prev {
+  left: 3px;
+}
+section .swiper-button-next {
+  right: 3px;
+}
+section .swiper-button-prev::after,
+section .swiper-button-next::after {
+  font-size: 26px;
+}
+section .swiper-button-prev:hover,
+section .swiper-button-next:hover {
+  background: rgba(var(--star-glow-rgb), 0.18);
 }
