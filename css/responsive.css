@@ -11,6 +11,7 @@
   h1 {
     font-size: 3rem;
   }
+
   /* columns */
   .column-layout {
     grid-template-columns: 1fr;
@@ -101,9 +102,12 @@
   .submit-button {
     font-size: 1.125rem;
   }
+  #spinning-star {
+    width: min(180px, 60%);
+  }
 }
 
-/* MAIN CONTENT */
+/* LANDING SECTION */
 @media (max-width: 820px) {
   .landing-container {
     grid-template-columns: 1fr;
@@ -117,9 +121,6 @@
   }
   .landing-column-right {
     justify-items: left;
-  }
-  #spinning-star {
-    width: min(280px, 70%);
   }
 }
 
