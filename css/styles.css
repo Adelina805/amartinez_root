@@ -242,6 +242,9 @@ h2 {
   gap: 0;
   transition: all 0.3s ease;
   align-items: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
 }
 .button-text {
   display: inline;
@@ -255,7 +258,7 @@ h2 {
   content: "→";
 }
 .landing-cta-button a:hover {
-  transform: scale(1.05) translateX(10px);
+  transform: scale(1.05) translateX(5px);
 }
 .landing-cta-button a:hover .button-text {
   text-decoration: underline;
@@ -298,8 +301,6 @@ h2 {
     transform: rotate(360deg);
   }
 }
-
-/* PAGE LOAD ANIMATIONS */
 
 /* Headline fade-in animation */
 @keyframes fade-in-headline {
