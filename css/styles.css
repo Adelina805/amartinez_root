@@ -536,6 +536,15 @@ section .gallery img.section-image {
   margin: 40px auto;
   overflow: hidden;
   max-width: 800px;
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+.faq-item:hover,
+.faq-item:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(var(--star-glow-rgb), 0.12);
 }
 .faq-item > summary {
   list-style: none;
@@ -562,11 +571,24 @@ section .gallery img.section-image {
   width: 25px;
   height: 25px;
   display: block;
+  transition: transform 180ms ease;
 }
 .faq-chevron {
   width: 25px;
   height: 25px;
   margin-left: auto;
+  transition: transform 220ms ease;
+}
+.faq-item:hover .faq-star,
+.faq-item:focus-within .faq-star {
+  transform: rotate(-10deg) scale(1.04);
+}
+.faq-item:hover .faq-chevron,
+.faq-item:focus-within .faq-chevron {
+  transform: translateX(2px);
+}
+.faq-item[open] .faq-chevron {
+  transform: rotate(90deg);
 }
 .faq-content {
   padding: 0 20px 18px 58px;
@@ -609,6 +631,24 @@ section .gallery img.section-image {
   color: var(--primary-TEXT1);
   outline: none;
   box-sizing: border-box;
+  box-shadow: 0 0 0 rgba(var(--star-glow-rgb), 0);
+  transition:
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+.form-group:focus-within .form-label {
+  text-shadow: 0 0 10px rgba(var(--star-glow-rgb), 0.35);
+}
+.form-group:hover .form-label {
+  text-shadow: 0 0 10px rgba(var(--star-glow-rgb), 0.35);
+}
+.form-input:hover,
+.form-textarea:hover,
+.form-input:focus,
+.form-input:focus-visible,
+.form-textarea:focus,
+.form-textarea:focus-visible {
+  box-shadow: 0 0 10px rgba(var(--star-glow-rgb), 0.35);
 }
 .form-textarea {
   resize: none;
@@ -631,9 +671,19 @@ section .gallery img.section-image {
   color: var(--primary-TEXT2);
   padding: 15px 15px;
   cursor: pointer;
+  box-shadow: 0 0 0 rgba(var(--star-glow-rgb), 0);
+  transition:
+    filter 180ms ease,
+    box-shadow 220ms ease;
 }
 .submit-button:hover {
   filter: brightness(0.8);
+  box-shadow: 0 0 10px rgba(var(--star-glow-rgb), 0.35);
+}
+.submit-button:focus,
+.submit-button:focus-visible,
+.submit-button:active {
+  box-shadow: 0 0 10px rgba(var(--star-glow-rgb), 0.35);
 }
 
 /* FLYING STARS */
