@@ -74,7 +74,8 @@
     font-size: 1.125rem;
   }
   .section-label {
-    font-size: 1.75rem;
+    font-size: 1.65rem;
+    padding: 5px 10px;
   }
   .section-date {
     font-size: 1.125rem;
