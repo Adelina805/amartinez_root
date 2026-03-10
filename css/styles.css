@@ -16,7 +16,7 @@ html[data-theme="dark"] {
   --primary-TEXT1: #e5edf7;
   --primary-TEXT2: #0047ab;
   --primary-TEXT3: #f2f8ff;
-  --form-placeholder: rgba(245, 250, 255, 0.99);
+  --form-placeholder: rgba(245, 250, 255, 0.6);
   --star-glow-rgb: 229, 237, 247;
 }
 html {
@@ -482,7 +482,7 @@ nav[aria-label="table-of-contents"] ul {
 /* ABOUT / CONTACT PAGE COLUMNS */
 .about-container,
 .contact-container {
-  min-height: 90vh;
+  min-height: 80vh;
 }
 .column-layout {
   display: grid;
