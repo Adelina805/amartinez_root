@@ -173,3 +173,60 @@ document.addEventListener("click", function (e) {
     toggleTheme();
   }
 });
+
+// CONTACT FORM CONNECTdocument.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contact-form");
+  if (!form) return;
+
+  const shell = document.getElementById("contact-form-shell");
+  const statusEl = form.querySelector(".form-status");
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  function showThanks() {
+    // Lock height to prevent layout jump
+    const h = shell
+      ? shell.getBoundingClientRect().height
+      : form.getBoundingClientRect().height;
+
+    if (shell) {
+      shell.style.height = `${h}px`;
+      shell.style.maxWidth = "650px"; // matches your form max-width
+    }
+
+    const target = shell || form;
+
+    target.innerHTML = `
+      <div class="contact-thanks">
+        <h2>Thank you for your message!</h2>
+        <p>✧ I'll be in contact soon ✧</p>
+      </div>
+    `;
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Honeypot check (bots)
+    const honeypot = form.querySelector('input[name="honeypot"]');
+    if (honeypot && honeypot.value.trim() !== "") {
+      showThanks();
+      return;
+    }
+
+    if (statusEl) statusEl.textContent = "Sending…";
+    if (submitBtn) submitBtn.disabled = true;
+
+    try {
+      const formData = new FormData(form);
+      const res = await fetch(form.action, { method: "POST", body: formData });
+
+      if (!res.ok) throw new Error("Request failed");
+      showThanks();
+    } catch (err) {
+      if (statusEl)
+        statusEl.textContent = "Oops — something went wrong. Please try again.";
+      if (submitBtn) submitBtn.disabled = false;
+    }
+  });
+});

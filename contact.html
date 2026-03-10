@@ -33,41 +33,48 @@
                         </svg>
                     </div>
 
-                    <div class="column-right">
-                        <form class="contact-form" action="#" method="post">
+                    <div id="contact-form-shell">
+                        <div class="column-right">
+                            <form id="contact-form" class="contact-form" action="https://api.staticforms.dev/submit"
+                                method="POST">
+                                <input type="hidden" name="apiKey" value="sf_k00i25lh10imi45n131i6fmc" />
 
-                            <div class="form-group form-group-name">
-                                <label for="name" class="form-label">NAME</label>
-                                <input type="text" id="name" name="name" placeholder="Jane Doe"
-                                    class="form-input input-name" required />
-                            </div>
+                                <input type="text" name="honeypot" style="position:absolute; left:-9999px;"
+                                    tabindex="-1" autocomplete="off" />
 
-                            <div class="form-group form-group-email">
-                                <label for="email" class="form-label">EMAIL</label>
-                                <input type="email" id="email" name="email" placeholder="example@email"
-                                    class="form-input input-email" required />
-                            </div>
+                                <div class="form-group form-group-name">
+                                    <label for="name" class="form-label">NAME</label>
+                                    <input type="text" id="name" name="name" placeholder="Jane Doe"
+                                        class="form-input input-name" required />
+                                </div>
 
-                            <div class="form-group form-group-message">
-                                <label for="message" class="form-label">MESSAGE</label>
-                                <textarea id="message" name="message" placeholder="Hello :D"
-                                    class="form-textarea input-message" rows="6" required></textarea>
-                            </div>
+                                <div class="form-group form-group-email">
+                                    <label for="email" class="form-label">EMAIL</label>
+                                    <input type="email" id="email" name="email" placeholder="example@email"
+                                        class="form-input input-email" required />
+                                </div>
 
-                            <div class="form-actions">
-                                <button type="submit" class="form-button submit-button">
-                                    SEND TO ADELINA
-                                </button>
-                            </div>
+                                <div class="form-group form-group-message">
+                                    <label for="message" class="form-label">MESSAGE</label>
+                                    <textarea id="message" name="message" placeholder="Hello :D"
+                                        class="form-textarea input-message" rows="6" required></textarea>
+                                </div>
 
-                        </form>
+                                <div class="form-actions">
+                                    <button type="submit" class="form-button submit-button">SEND TO ADELINA</button>
+                                    <p class="form-status" aria-live="polite" style="margin-top:.5rem;"></p>
+                                </div>
+
+                            </form>
+                        </div>
 
                     </div>
 
 
                 </div>
                 <p class="note"><i>You can also connect with me on <a
-                            href="https://www.linkedin.com/in/adelina-martinez/" target="_blank">LinkedIn</a>. I look
+                            href="https://www.linkedin.com/in/adelina-martinez/" target="_blank">LinkedIn</a>. I
+                        look
                         forward to hearing from you :)</i> </p>
             </div>
         </section>

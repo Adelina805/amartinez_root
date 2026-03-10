@@ -679,6 +679,23 @@ nav[aria-label="table-of-contents"] ul {
 .submit-button:active {
   box-shadow: 0 0 10px rgba(var(--star-glow-rgb), 0.35);
 }
+#contact-form-shell {
+  width: 100%;
+}
+.contact-thanks {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 7rem;
+  box-sizing: border-box;
+}
+.contact-thanks h2 {
+  margin: 0 0 0.25rem 0;
+}
 
 /* FLYING STARS */
 #stars-container {
