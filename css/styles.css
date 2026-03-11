@@ -7,7 +7,9 @@
   --primary-TEXT2: #e5edf7;
   --primary-TEXT3: #00387c;
   --form-placeholder: rgba(0, 71, 160, 0.6);
-  --star-glow-rgb: 0, 71, 160;
+  --star-glow-rgb: 74, 154, 255;
+  --glow-blur-radius: 15px;
+  --glow-intensity: 0.8;
   --selection-bg: #0047a0;
   --selection-text: #e5edf7;
 }
@@ -90,7 +92,8 @@ a {
   transition: text-shadow 220ms ease;
 }
 a:hover {
-  text-shadow: 0 0 10px rgba(var(--star-glow-rgb), 0.35);
+  text-shadow: 0 0 var(--glow-blur-radius)
+    rgba(var(--star-glow-rgb), var(--glow-intensity));
 }
 h1 {
   font-size: 4rem;
@@ -103,7 +106,8 @@ h1 {
   margin-bottom: 60px;
 }
 h1:hover {
-  text-shadow: 0 0 10px rgba(var(--star-glow-rgb), 0.35);
+  text-shadow: 0 0 var(--glow-blur-radius)
+    rgba(var(--star-glow-rgb), var(--glow-intensity));
 }
 h2 {
   font-size: 2rem;
@@ -312,7 +316,10 @@ h2 {
 
 #spinning-star:hover {
   scale: 1.05;
-  filter: drop-shadow(0 0 10px rgba(var(--star-glow-rgb), 0.35));
+  filter: drop-shadow(
+    0 0 var(--glow-blur-radius)
+      rgba(var(--star-glow-rgb), var(--glow-intensity))
+  );
   animation: spin-star 40s linear infinite reverse;
 }
 @keyframes spin-star {
@@ -470,7 +477,8 @@ nav[aria-label="table-of-contents"] ul {
   transition: text-shadow 220ms ease;
 }
 .section-quote:hover {
-  text-shadow: 0 0 10px rgba(var(--star-glow-rgb), 0.35);
+  text-shadow: 0 0 var(--glow-blur-radius)
+    rgba(var(--star-glow-rgb), var(--glow-intensity));
 }
 .section-courselist-light,
 .section-courselist-dark {
@@ -640,10 +648,12 @@ nav[aria-label="table-of-contents"] ul {
     border-color 220ms ease;
 }
 .form-group:focus-within .form-label {
-  text-shadow: 0 0 10px rgba(var(--star-glow-rgb), 0.35);
+  text-shadow: 0 0 var(--glow-blur-radius)
+    rgba(var(--star-glow-rgb), var(--glow-intensity));
 }
 .form-group:hover .form-label {
-  text-shadow: 0 0 10px rgba(var(--star-glow-rgb), 0.35);
+  text-shadow: 0 0 var(--glow-blur-radius)
+    rgba(var(--star-glow-rgb), var(--glow-intensity));
 }
 .form-input:hover,
 .form-textarea:hover,
@@ -651,7 +661,8 @@ nav[aria-label="table-of-contents"] ul {
 .form-input:focus-visible,
 .form-textarea:focus,
 .form-textarea:focus-visible {
-  box-shadow: 0 0 10px rgba(var(--star-glow-rgb), 0.35);
+  box-shadow: 0 0 var(--glow-blur-radius)
+    rgba(var(--star-glow-rgb), var(--glow-intensity));
 }
 .form-textarea {
   resize: none;
@@ -681,12 +692,14 @@ nav[aria-label="table-of-contents"] ul {
 }
 .submit-button:hover {
   filter: brightness(0.8);
-  box-shadow: 0 0 10px rgba(var(--star-glow-rgb), 0.35);
+  box-shadow: 0 0 var(--glow-blur-radius)
+    rgba(var(--star-glow-rgb), var(--glow-intensity));
 }
 .submit-button:focus,
 .submit-button:focus-visible,
 .submit-button:active {
-  box-shadow: 0 0 10px rgba(var(--star-glow-rgb), 0.35);
+  box-shadow: 0 0 var(--glow-blur-radius)
+    rgba(var(--star-glow-rgb), var(--glow-intensity));
 }
 #contact-form-shell {
   width: 100%;
