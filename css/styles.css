@@ -682,7 +682,16 @@ nav[aria-label="table-of-contents"] ul {
 .form-actions {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
   margin-top: 10px;
+}
+.form-status {
+  margin: 0;
+  max-width: none;
+}
+.form-status:empty {
+  display: none;
 }
 .submit-button {
   border: 2px solid var(--primary-COLOR);
