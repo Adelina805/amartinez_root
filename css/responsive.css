@@ -127,7 +127,7 @@
 }
 /* LANDING SECTION */
 /* BLURRED STARS - MOBILE */
-@media (max-width: 420px) {
+@media (max-width: 480px) {
   .hero-star--1 {
     width: 400px;
     height: 400px;
@@ -137,12 +137,38 @@
     height: 300px;
   }
   .hero-star--3 {
-    width: 500px;
-    height: 500px;
+    width: 490px;
+    height: 490px;
   }
   .hero-star--4 {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
+    left: 55%;
+  }
+  .hero-star--5 {
+    width: 200px;
+    height: 200px;
+    bottom: 100px;
+  }
+}
+/* BLURRED STARS - TABLET */
+@media (max-width: 820px) {
+  .hero-star--1 {
+    width: 490px;
+    height: 490px;
+  }
+  .hero-star--2 {
+    top: 25%;
+  }
+  .hero-star--3 {
+    width: 590px;
+    height: 590px;
+  }
+  .hero-star--4 {
+    left: 50%;
+  }
+  .hero-star--5 {
+    bottom: 250px;
   }
 }
 
