@@ -6,6 +6,8 @@
   --primary-TEXT1: #0047a0;
   --primary-TEXT2: #e5edf7;
   --primary-TEXT3: #00387c;
+  --timeline-number-light-section: #0047a0;
+  --timeline-number-dark-section: #0047a0;
   --form-placeholder: rgba(0, 71, 160, 0.6);
   --star-glow-rgb: 74, 154, 255;
   --glow-blur-radius: 15px;
@@ -20,6 +22,8 @@ html[data-theme="dark"] {
   --primary-TEXT1: #e5edf7;
   --primary-TEXT2: #0047ab;
   --primary-TEXT3: #f2f8ff;
+  --timeline-number-light-section: #b8d6ff;
+  --timeline-number-dark-section: #d6e8ff;
   --form-placeholder: rgba(245, 250, 255, 0.6);
   --star-glow-rgb: 229, 237, 247;
   --selection-bg: #e5edf7;
@@ -484,11 +488,11 @@ nav[aria-label="table-of-contents"] ul {
   background-color: var(--primary-BG2);
 }
 .timeline-section--light::before {
-  color: #7fb0ff;
+  color: var(--timeline-number-light-section);
   opacity: 0.11;
 }
 .timeline-section--dark::before {
-  color: #b8d6ff;
+  color: var(--timeline-number-dark-section);
   opacity: 0.14;
 }
 .section-label {
