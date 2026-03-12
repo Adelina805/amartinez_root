@@ -58,6 +58,16 @@
 
 /* MOBILE VIEW */
 @media only screen and (max-width: 480px) {
+  .timeline-section::before {
+    right: 8px;
+    top: 8px;
+    font-size: clamp(5.2rem, 32vw, 8rem);
+  }
+
+  .timeline-section:hover::before {
+    transform: translate3d(-2px, 0, 0);
+  }
+
   p {
     font-size: 1.125rem;
   }
@@ -135,6 +145,12 @@
 
 /* SECTION LAYOUTS */
 @media (max-width: 1000px) {
+  .timeline-section::before {
+    font-size: clamp(7.5rem, 26vw, 13rem);
+    right: clamp(6px, 3vw, 28px);
+    top: clamp(10px, 4vw, 30px);
+  }
+
   .section-content {
     grid-template-columns: 300px 1fr;
     grid-template-areas:
@@ -151,6 +167,11 @@
   }
 }
 @media (max-width: 750px) {
+  .timeline-section::before {
+    font-size: clamp(6.2rem, 30vw, 10rem);
+    opacity: 0.09;
+  }
+
   .section-content {
     grid-template-columns: 1fr;
     grid-template-areas:
