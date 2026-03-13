@@ -73,9 +73,13 @@
   }
   h1 {
     font-size: 2.25rem;
+    text-shadow: 0 0 var(--glow-blur-radius)
+      rgba(var(--star-glow-rgb), var(--glow-intensity));
   }
   h2 {
     font-size: 1.5rem;
+    text-shadow: 0 0 var(--glow-blur-radius)
+      rgba(var(--star-glow-rgb), var(--glow-intensity));
   }
   .landing-cta-button a {
     font-size: 1.5rem;
@@ -99,6 +103,8 @@
   }
   .section-quote {
     font-size: 2rem;
+    text-shadow: 0 0 var(--glow-blur-radius)
+      rgba(var(--star-glow-rgb), var(--glow-intensity));
   }
   .section-courselist-light,
   .section-courselist-dark {
@@ -262,5 +268,13 @@
     align-items: flex-start;
     gap: 20px;
     padding: 20px 20px;
+  }
+}
+
+@media (max-width: 620px) {
+  .page-title {
+    max-width: 16ch;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

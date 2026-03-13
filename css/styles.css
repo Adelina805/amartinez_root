@@ -472,20 +472,6 @@ hero-stars {
   }
 }
 
-/* Headline fade-in animation */
-@keyframes fade-in-headline {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.landing-title.animate-in {
-  animation: fade-in-headline 1s ease-out forwards;
-}
-
 /* Star entrance animation - rotate and scale in */
 @keyframes star-rotate-in {
   from {
