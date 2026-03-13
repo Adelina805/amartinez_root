@@ -361,7 +361,7 @@ hero-stars {
     transform: translate(0, 0) rotate(-5deg);
   }
   50% {
-    transform: translate(30px, -10px) rotate(-20deg);
+    transform: translate(-5px, 15px) rotate(10deg);
   }
 }
 @keyframes float-star-5 {
