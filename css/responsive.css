@@ -265,9 +265,15 @@
   }
   .site-footer .bar-inner {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 20px;
     padding: 20px 20px;
+  }
+  .site-footer .nav-links-left {
+    align-self: flex-start;
+  }
+  .site-footer .nav-links-right {
+    align-self: flex-end;
   }
 }
 
