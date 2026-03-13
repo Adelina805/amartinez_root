@@ -596,6 +596,24 @@ nav[aria-label="table-of-contents"] ul {
   position: relative;
   z-index: 1;
 }
+.timeline-star {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: -240px;
+  bottom: -150px;
+  top: auto;
+  z-index: 0;
+  user-select: none;
+  color: var(--hero-star-color);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  filter: blur(20px) drop-shadow(0 0 40px var(--hero-star-color));
+  animation: none;
+}
+html[data-theme="dark"] .timeline-star {
+  mix-blend-mode: screen;
+}
 .timeline-section--light {
   background-color: var(--primary-BG1);
 }
