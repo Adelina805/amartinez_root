@@ -80,6 +80,13 @@
   .landing-cta-button a {
     font-size: 1.5rem;
   }
+  .landing-cta-button a .button-text {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .landing-cta-button a .button-arrow {
+    opacity: 1;
+  }
   .toc-item {
     font-size: 1.125rem;
   }
