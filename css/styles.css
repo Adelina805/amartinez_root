@@ -244,10 +244,28 @@ h2:hover {
 /* LANDING PAGE */
 .landing {
   position: relative;
-  min-height: 80vh;
   display: flex;
   align-items: center;
   padding: clamp(24px, 4vw, 64px) 0;
+}
+
+/* Reusable section wrapper for pages that use <hero-stars> */
+.hero-stars-section {
+  position: relative;
+  overflow: hidden;
+}
+.hero-stars-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Custom element host positioning for shared hero backdrop */
+hero-stars {
+  position: absolute;
+  inset: 0;
+  display: block;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* BLURRED HERO STARS BACKDROP */
@@ -697,7 +715,7 @@ nav[aria-label="table-of-contents"] ul {
 /* ABOUT / CONTACT PAGE COLUMNS */
 .about-container,
 .contact-container {
-  min-height: 80vh;
+  min-height: 90vh;
 }
 .column-layout {
   display: grid;
