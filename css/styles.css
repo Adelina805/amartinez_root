@@ -243,10 +243,10 @@ h2:hover {
 
 /* LANDING PAGE */
 .landing {
+  min-height: 90vh;
   position: relative;
   display: flex;
   align-items: center;
-  padding: clamp(24px, 4vw, 64px) 0;
 }
 
 /* Reusable section wrapper for pages that use <hero-stars> */
