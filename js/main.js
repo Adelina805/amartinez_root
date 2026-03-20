@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (shell) {
       shell.style.height = `${h}px`;
-      shell.style.maxWidth = "650px"; // matches your form max-width
+      shell.style.maxWidth = "650px";
     }
 
     const target = shell || form;
