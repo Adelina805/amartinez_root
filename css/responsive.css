@@ -58,6 +58,120 @@
 
 /* MOBILE VIEW */
 @media only screen and (max-width: 480px) {
+  .timeline-toc {
+    position: relative;
+    z-index: 3;
+    margin-top: 5px;
+    transition:
+      transform 240ms ease,
+      top 240ms ease,
+      left 240ms ease;
+  }
+  .timeline-toc-toggle {
+    width: 56px;
+    min-width: 56px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--toc-floating-border);
+    border-radius: 999px;
+    background: var(--toc-floating-surface-strong);
+    color: var(--primary-TEXT1);
+    box-shadow: var(--toc-floating-shadow);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    cursor: pointer;
+    transition:
+      transform 240ms ease,
+      background-color 240ms ease,
+      border-color 240ms ease,
+      box-shadow 240ms ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .timeline-toc-toggle:hover {
+    transform: translateY(-1px);
+  }
+  .timeline-toc-toggle:focus-visible {
+    outline: 2px solid var(--primary-COLOR);
+    outline-offset: 3px;
+  }
+  .timeline-toc-toggle svg {
+    width: 24px;
+    height: 24px;
+  }
+  .timeline-toc-panel {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: min(300px, calc(100vw - 100px));
+    max-width: calc(100vw - 100px);
+    padding: 16px 18px;
+    border: 1px solid var(--toc-floating-border);
+    border-radius: 22px;
+    background: var(--toc-floating-surface);
+    box-shadow: var(--toc-floating-shadow);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px) scale(0.98);
+    transform-origin: top left;
+    transition:
+      opacity 180ms ease,
+      transform 240ms ease,
+      visibility 0s linear 240ms;
+  }
+  .timeline-toc.is-open .timeline-toc-panel {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+    transition:
+      opacity 180ms ease,
+      transform 240ms ease,
+      visibility 0s linear 0s;
+  }
+  .timeline-toc.is-stuck {
+    position: fixed;
+    top: 12px;
+    left: 14px;
+    z-index: 10001;
+    transform: scale(0.94);
+    transform-origin: top left;
+  }
+  .timeline-toc.is-stuck .timeline-toc-toggle {
+    height: 40px;
+    min-width: 52px;
+  }
+  .timeline-toc-panel ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .timeline-toc-panel .toc-item {
+    display: inline-flex;
+    align-items: baseline;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 8px 0;
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+  .timeline-toc-panel li:last-child .toc-item {
+    padding-bottom: 0;
+  }
+  .timeline-toc-panel li:first-child .toc-item {
+    padding-top: 0;
+  }
+  .timeline-toc-panel .toc-number {
+    min-width: 2.6ch;
+    margin-right: 8px;
+  }
+  .timeline-toc-panel .toc-title {
+    border-bottom-width: 1.5px;
+  }
   .timeline-section::before {
     right: 8px;
     top: 8px;
@@ -91,7 +205,8 @@
   .landing-cta-button a .button-arrow {
     opacity: 1;
   }
-  .toc-item {
+  .timeline-toc > .timeline-toc-panel > ul > li > .toc-item,
+  nav[aria-label="table-of-contents"] > ul > li > .toc-item {
     font-size: 1.125rem;
   }
   .section-label {

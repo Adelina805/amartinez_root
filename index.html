@@ -30,33 +30,50 @@
         <div class="landing-column-left">
           <h1 class="landing-title">Welcome to<br>Adelina Martinez's Timeline at SDSU</h1>
 
-          <nav aria-label="table-of-contents">
-            <ul style="list-style-type: none;">
-              <li><a href="#so-it-begins" class="toc-item">
-                  <span class="toc-number" aria-hidden="true"></span>
-                  <span class="toc-title">So It Begins...</span>
-                </a></li>
-              <li><a href="#i-did-this-to-myself" class="toc-item">
-                  <span class="toc-number" aria-hidden="true"></span>
-                  <span class="toc-title">I Did This To Myself</span>
-                </a></li>
-              <li><a href="#somehow-still-here" class="toc-item">
-                  <span class="toc-number" aria-hidden="true"></span>
-                  <span class="toc-title">Somehow Still Here</span>
-                </a></li>
-              <li><a href="#stockholm-syndrome" class="toc-item">
-                  <span class="toc-number" aria-hidden="true"></span>
-                  <span class="toc-title">Stockholm Syndrome</span>
-                </a></li>
-              <li><a href="#the-end-is-near" class="toc-item">
-                  <span class="toc-number" aria-hidden="true"></span>
-                  <span class="toc-title">The End Is Near</span>
-                </a></li>
-              <li><a href="#uh-oh-whats-next" class="toc-item">
-                  <span class="toc-number" aria-hidden="true"></span>
-                  <span class="toc-title">Uh oh, What’s Next</span>
-                </a></li>
-            </ul>
+          <nav aria-label="table-of-contents" class="timeline-toc" data-mobile-toc>
+            <button
+              type="button"
+              class="timeline-toc-toggle"
+              aria-expanded="false"
+              aria-controls="timeline-toc-panel"
+              aria-label="Toggle timeline table of contents">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-menu-icon lucide-menu" aria-hidden="true" focusable="false">
+                <path d="M4 5h16" />
+                <path d="M4 12h16" />
+                <path d="M4 19h16" />
+              </svg>
+            </button>
+
+            <div id="timeline-toc-panel" class="timeline-toc-panel">
+              <ul style="list-style-type: none;">
+                <li><a href="#so-it-begins" class="toc-item">
+                    <span class="toc-number" aria-hidden="true"></span>
+                    <span class="toc-title">So It Begins...</span>
+                  </a></li>
+                <li><a href="#i-did-this-to-myself" class="toc-item">
+                    <span class="toc-number" aria-hidden="true"></span>
+                    <span class="toc-title">I Did This To Myself</span>
+                  </a></li>
+                <li><a href="#somehow-still-here" class="toc-item">
+                    <span class="toc-number" aria-hidden="true"></span>
+                    <span class="toc-title">Somehow Still Here</span>
+                  </a></li>
+                <li><a href="#stockholm-syndrome" class="toc-item">
+                    <span class="toc-number" aria-hidden="true"></span>
+                    <span class="toc-title">Stockholm Syndrome</span>
+                  </a></li>
+                <li><a href="#the-end-is-near" class="toc-item">
+                    <span class="toc-number" aria-hidden="true"></span>
+                    <span class="toc-title">The End Is Near</span>
+                  </a></li>
+                <li><a href="#uh-oh-whats-next" class="toc-item">
+                    <span class="toc-number" aria-hidden="true"></span>
+                    <span class="toc-title">Uh oh, What’s Next</span>
+                  </a></li>
+              </ul>
+            </div>
           </nav>
 
         </div>
