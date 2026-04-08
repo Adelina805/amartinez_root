@@ -1,20 +1,22 @@
 const THEME_STORAGE_KEY = "site-theme";
 
+// THEME TOGGLE
 function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
 }
 
+// Determine initial theme based on saved preference or system setting
 function getInitialTheme() {
   const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
   if (savedTheme === "light" || savedTheme === "dark") {
     return savedTheme;
   }
-
   return window.matchMedia("(prefers-color-scheme: dark)").matches
     ? "dark"
     : "light";
 }
 
+// Toggle between light and dark themes
 function toggleTheme() {
   const currentTheme =
     document.documentElement.getAttribute("data-theme") || "light";
@@ -24,12 +26,12 @@ function toggleTheme() {
   localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
 }
 
+// Scroll progress bar update
 function updateScrollProgress() {
   const progressFill = document.querySelector(".scroll-progress-fill");
   if (!progressFill) {
     return;
   }
-
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
   const scrollHeight =
     document.documentElement.scrollHeight - window.innerHeight;
@@ -133,6 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // MOBILE TOC
   const mobileToc = document.querySelector("[data-mobile-toc]");
   if (mobileToc) {
     const mobileBreakpoint = window.matchMedia("(max-width: 480px)");
@@ -143,6 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const landingTitle = document.querySelector(".landing-title");
     let isOpen = false;
 
+    // Set the open/closed state of the mobile TOC
     function setOpenState(nextOpen) {
       isOpen = nextOpen;
       mobileToc.classList.toggle("is-open", isOpen);
@@ -156,17 +160,16 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
+    // Update the sticky state of the mobile TOC based on scroll position
     function updateStickyState() {
       if (!mobileBreakpoint.matches) {
         mobileToc.classList.remove("is-stuck");
         return;
       }
-
       const referenceElement = landingTitle || landingSection;
       if (!referenceElement) {
         return;
       }
-
       const referenceBottom =
         referenceElement.getBoundingClientRect().bottom + window.scrollY;
       const stickyThreshold = Math.max(referenceBottom - 12, 0);
@@ -175,45 +178,47 @@ document.addEventListener("DOMContentLoaded", () => {
       mobileToc.classList.toggle("is-stuck", shouldStick);
     }
 
+    // Sync the TOC mode (mobile vs desktop) and reset state when switching
     function syncTocMode() {
       if (!mobileBreakpoint.matches) {
         setOpenState(false);
         mobileToc.classList.remove("is-stuck");
         return;
       }
-
       updateStickyState();
     }
 
     setOpenState(false);
     syncTocMode();
 
+    // Toggle mobile TOC open/closed when clicking the button
     if (toggleButton) {
       toggleButton.addEventListener("click", () => {
         if (!mobileBreakpoint.matches) {
           return;
         }
-
         setOpenState(!isOpen);
       });
     }
 
+    // Close mobile TOC when clicking outside of it
     document.addEventListener("click", (event) => {
       if (!mobileBreakpoint.matches || !isOpen) {
         return;
       }
-
       if (!mobileToc.contains(event.target)) {
         setOpenState(false);
       }
     });
 
+    // Close mobile TOC on Escape key press
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape" && isOpen) {
         setOpenState(false);
       }
     });
 
+    // Smooth scroll to section and close TOC when clicking a link
     tocLinks.forEach((link) => {
       link.addEventListener("click", (event) => {
         const targetId = link.getAttribute("href");
@@ -222,7 +227,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!target) {
           return;
         }
-
         if (mobileBreakpoint.matches) {
           event.preventDefault();
           setOpenState(false);
@@ -230,7 +234,6 @@ document.addEventListener("DOMContentLoaded", () => {
             behavior: "smooth",
             block: "start",
           });
-
           if (targetId) {
             window.history.pushState(null, "", targetId);
           }
@@ -258,7 +261,6 @@ document.addEventListener("click", function (e) {
     });
     return;
   }
-
   const themeToggle = e.target.closest(".theme-toggle");
   if (themeToggle) {
     e.preventDefault();
@@ -266,7 +268,7 @@ document.addEventListener("click", function (e) {
   }
 });
 
-// CONTACT FORM CONNECTdocument.addEventListener("DOMContentLoaded", () => {
+// CONTACT FORM CONNECT
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contact-form");
   if (!form) return;

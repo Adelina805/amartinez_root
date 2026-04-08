@@ -36,8 +36,8 @@ html[data-theme="dark"] {
   --selection-text: #0047a0;
   --toc-floating-shadow: 0 18px 40px rgba(0, 11, 30, 0.34);
   --toc-floating-border: rgba(229, 237, 247, 0.18);
-  --toc-floating-surface: rgba(0, 61, 147, 0.85);
-  --toc-floating-surface-strong: rgba(0, 61, 147, 0.92);
+  --toc-floating-surface: rgba(0, 58, 139, 0.92);
+  --toc-floating-surface-strong: rgba(0, 58, 139, 0.92);
 }
 ::selection {
   background: var(--selection-bg);
