@@ -5,15 +5,17 @@ function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
 }
 
-// Determine initial theme based on saved preference or system setting
+// Determine the initial theme.
+// Use the saved theme first, and if there isn't one,
+// default to light mode before 6 PM and dark mode after 6 PM.
 function getInitialTheme() {
   const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
   if (savedTheme === "light" || savedTheme === "dark") {
     return savedTheme;
   }
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
+
+  const currentHour = new Date().getHours();
+  return currentHour < 18 ? "light" : "dark";
 }
 
 // Toggle between light and dark themes
