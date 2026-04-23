@@ -326,3 +326,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// FAQ accordion
+document.addEventListener("DOMContentLoaded", () => {
+  const faqItems = document.querySelectorAll(".faq-section .faq-item");
+  if (!faqItems.length) return;
+
+  faqItems.forEach((item) => {
+    item.addEventListener("toggle", () => {
+      if (!item.open) return;
+
+      faqItems.forEach((otherItem) => {
+        if (otherItem !== item) {
+          otherItem.open = false;
+        }
+      });
+    });
+  });
+});
