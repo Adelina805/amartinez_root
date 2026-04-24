@@ -329,18 +329,119 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // FAQ accordion
 document.addEventListener("DOMContentLoaded", () => {
-  const faqItems = document.querySelectorAll(".faq-section .faq-item");
+  const faqItems = Array.from(
+    document.querySelectorAll(".faq-section .faq-item"),
+  );
   if (!faqItems.length) return;
 
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+  const duration = 320;
+  const easing = "cubic-bezier(0.4, 0, 0.2, 1)";
+
+  function getContent(item) {
+    return item.querySelector(".faq-content");
+  }
+
+  function prepareItem(item) {
+    const content = getContent(item);
+    if (!content) return;
+
+    content.style.overflow = "hidden";
+    content.style.willChange = "height";
+
+    if (prefersReducedMotion) {
+      content.style.transition = "none";
+      content.style.height = item.open ? "auto" : "0px";
+      return;
+    }
+
+    content.style.transition = `height ${duration}ms ${easing}`;
+    content.style.height = item.open ? "auto" : "0px";
+  }
+
+  function animateClose(item) {
+    const content = getContent(item);
+    if (!content || !item.open) return;
+
+    if (prefersReducedMotion) {
+      item.open = false;
+      content.style.height = "0px";
+      return;
+    }
+
+    content.style.height = `${content.scrollHeight}px`;
+    // Force reflow so the browser acknowledges the start height before animating.
+    void content.offsetHeight;
+
+    item.dataset.animating = "true";
+    content.style.height = "0px";
+
+    const onEnd = (event) => {
+      if (event.propertyName !== "height") return;
+      content.removeEventListener("transitionend", onEnd);
+      item.open = false;
+      item.dataset.animating = "false";
+    };
+
+    content.addEventListener("transitionend", onEnd);
+  }
+
+  function animateOpen(item) {
+    const content = getContent(item);
+    if (!content || item.open) return;
+
+    if (prefersReducedMotion) {
+      item.open = true;
+      content.style.height = "auto";
+      return;
+    }
+
+    item.open = true;
+    item.dataset.animating = "true";
+    content.style.height = "0px";
+
+    const targetHeight = content.scrollHeight;
+    requestAnimationFrame(() => {
+      content.style.height = `${targetHeight}px`;
+    });
+
+    const onEnd = (event) => {
+      if (event.propertyName !== "height") return;
+      content.removeEventListener("transitionend", onEnd);
+      content.style.height = "auto";
+      item.dataset.animating = "false";
+    };
+
+    content.addEventListener("transitionend", onEnd);
+  }
+
   faqItems.forEach((item) => {
-    item.addEventListener("toggle", () => {
-      if (!item.open) return;
+    prepareItem(item);
+
+    const summary = item.querySelector("summary");
+    if (!summary) return;
+
+    summary.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      if (item.dataset.animating === "true") {
+        return;
+      }
+
+      if (item.open) {
+        animateClose(item);
+        return;
+      }
 
       faqItems.forEach((otherItem) => {
         if (otherItem !== item) {
-          otherItem.open = false;
+          animateClose(otherItem);
         }
       });
+
+      animateOpen(item);
     });
   });
 });
