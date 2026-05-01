@@ -39,29 +39,52 @@
 
                     <div id="contact-form-shell">
                         <div class="column-right">
-                            <form id="contact-form" class="contact-form" action="https://api.staticforms.dev/submit"
-                                method="POST">
-                                <input type="hidden" name="apiKey" value="sf_k00i25lh10imi45n131i6fmc" />
+                            <form id="contact-form" class="contact-form" action="contact-handler.php" method="POST">
 
                                 <input type="text" name="honeypot" style="position:absolute; left:-9999px;"
                                     tabindex="-1" autocomplete="off" />
 
-                                <fieldset class="form-group form-group-name">
-                                    <legend class="form-label">NAME</legend>
-                                    <input type="text" id="name" name="name" placeholder="Jane Doe"
-                                        class="form-input input-name" required />
+                                <fieldset class="form-group form-group-first-name">
+                                    <legend class="form-label">FIRST NAME</legend>
+                                    <input type="text" id="first-name" name="first_name" placeholder="Jane"
+                                        autocomplete="given-name" class="form-input input-first-name" required />
+                                </fieldset>
+
+                                <fieldset class="form-group form-group-last-name">
+                                    <legend class="form-label">LAST NAME</legend>
+                                    <input type="text" id="last-name" name="last_name" placeholder="Doe"
+                                        autocomplete="family-name" class="form-input input-last-name" required />
                                 </fieldset>
 
                                 <fieldset class="form-group form-group-email">
                                     <legend class="form-label">EMAIL</legend>
                                     <input type="email" id="email" name="email" placeholder="example@email"
-                                        class="form-input input-email" required />
+                                        autocomplete="email" class="form-input input-email" required />
+                                </fieldset>
+
+                                <fieldset class="form-group form-group-phone">
+                                    <legend class="form-label">PHONE</legend>
+                                    <input type="tel" id="phone" name="phone" placeholder="(619) 867-5309"
+                                        autocomplete="tel" inputmode="tel" class="form-input input-phone" required />
                                 </fieldset>
 
                                 <fieldset class="form-group form-group-message">
                                     <legend class="form-label">MESSAGE</legend>
                                     <textarea id="message" name="message" placeholder="Hello :D"
                                         class="form-textarea input-message" rows="6" required></textarea>
+                                </fieldset>
+
+                                <fieldset class="form-group form-group-question">
+                                    <legend class="form-label">HOW DID YOU FIND MY SITE?</legend>
+                                    <select id="custom-question" name="custom_question"
+                                        class="form-input input-question" required>
+                                        <option value="" selected disabled>Select one</option>
+                                        <option value="class_project">Class project</option>
+                                        <option value="search_engine">Search engine</option>
+                                        <option value="social_media">Social media</option>
+                                        <option value="friend">Friend</option>
+                                        <option value="other">Other</option>
+                                    </select>
                                 </fieldset>
 
                                 <div class="form-actions">
