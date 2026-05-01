@@ -235,7 +235,8 @@
     font-size: 0.75em;
   }
   .form-input,
-  .form-textarea {
+  .form-textarea,
+  .form-select {
     font-size: 1.125rem;
   }
   .submit-button {
