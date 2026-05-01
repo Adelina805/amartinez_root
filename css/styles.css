@@ -797,6 +797,7 @@ html[data-theme="dark"] .timeline-star {
   padding: 20px 22px;
   color: var(--primary-TEXT1);
   font-size: 1.375rem;
+  font-weight: 600;
   user-select: none;
 }
 .faq-icon {
@@ -827,7 +828,8 @@ html[data-theme="dark"] .timeline-star {
   transform: rotate(90deg);
 }
 .faq-content {
-  padding: 0 20px 18px 58px;
+  border-top: 1px solid rgba(var(--star-glow-rgb), 0.18);
+  padding: 16px 20px 18px 58px;
 }
 
 /* CONTACT PAGE */
