@@ -797,7 +797,6 @@ html[data-theme="dark"] .timeline-star {
   padding: 20px 22px;
   color: var(--primary-TEXT1);
   font-size: 1.375rem;
-  font-weight: 600;
   user-select: none;
 }
 .faq-icon {
@@ -1061,4 +1060,44 @@ section .swiper-button-next::after {
 section .swiper-button-prev:hover,
 section .swiper-button-next:hover {
   background: rgba(var(--star-glow-rgb), 0.18);
+}
+
+/* AMBIENT LABEL - Lightweight contextual tooltip */
+.ambient-label {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 6px 12px;
+  background: var(--primary-BG2);
+  color: var(--primary-TEXT1);
+  border: 1px solid var(--primary-TEXT1);
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10000;
+  opacity: 0;
+  transform: translateY(-2px);
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease;
+  will-change: opacity, transform;
+}
+
+html[data-theme="dark"] .ambient-label {
+  background: var(--primary-BG1);
+  border-color: var(--primary-TEXT1);
+  color: var(--primary-COLOR);
+}
+
+.ambient-label.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-label {
+    transition: none;
+  }
 }

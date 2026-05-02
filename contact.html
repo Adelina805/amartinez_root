@@ -49,13 +49,13 @@
                                 <fieldset class="form-group form-group-name">
                                     <legend class="form-label">NAME</legend>
                                     <input type="text" id="name" name="name" placeholder="Jane Doe"
-                                        class="form-input input-name" required />
+                                        class="form-input input-name" data-ambient-tip-group="input" required />
                                 </fieldset>
 
                                 <fieldset class="form-group form-group-email">
                                     <legend class="form-label">EMAIL</legend>
                                     <input type="email" id="email" name="email" placeholder="example@email"
-                                        class="form-input input-email" required />
+                                        class="form-input input-email" data-ambient-tip-group="input" required />
                                 </fieldset>
 
                                 <fieldset class="form-group form-group-referral">
@@ -73,11 +73,13 @@
                                 <fieldset class="form-group form-group-message">
                                     <legend class="form-label">MESSAGE</legend>
                                     <textarea id="message" name="message" placeholder="Hello :D"
-                                        class="form-textarea input-message" rows="6" required></textarea>
+                                        class="form-textarea input-message" data-ambient-tip-group="textarea" rows="6"
+                                        required></textarea>
                                 </fieldset>
 
                                 <div class="form-actions">
-                                    <button type="submit" class="form-button submit-button">SEND TO ADELINA</button>
+                                    <button type="submit" class="form-button submit-button"
+                                        data-ambient-tip-group="button">SEND TO ADELINA</button>
                                     <p class="form-status" aria-live="polite"></p>
                                 </div>
 
@@ -104,6 +106,7 @@
     <script src="js/components/header.js"></script>
     <script src="js/components/footer.js"></script>
     <script src="js/components/hero-stars.js"></script>
+    <script src="js/components/ambient-label.js"></script>
     <script src="js/main.js"></script>
 </body>
 
