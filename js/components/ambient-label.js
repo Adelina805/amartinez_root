@@ -34,7 +34,7 @@ class AmbientLabel {
       ],
       image: [
         "this is a picture",
-        "<img> content",
+        "<img>",
         "an image",
         "look at this",
         "wow a photo",
@@ -54,7 +54,7 @@ class AmbientLabel {
         "the end",
       ],
       input: [
-        "your name here",
+        "your info here",
         "type something",
         "fill this in",
         "talk to me",
@@ -83,7 +83,7 @@ class AmbientLabel {
       ],
       timeline: [
         "the semesters",
-        "timeline",
+        "the timeline",
         "a chapter",
         "history",
         "my journey",
@@ -105,7 +105,7 @@ class AmbientLabel {
       "section-quote": [
         "wise words",
         "a quote",
-        "inspiration",
+        "inspirational",
         "profound",
         "something to ponder",
       ],
@@ -116,13 +116,7 @@ class AmbientLabel {
         "course highlights",
         "courses I enjoyed",
       ],
-      paragraph: [
-        "some text",
-        "read this",
-        "words",
-        "a paragraph",
-        "interesting...",
-      ],
+      paragraph: ["some text", "read this", "words", "a paragraph", "<p>"],
     };
 
     this.explicitSelector = "[data-ambient-tip], [data-ambient-tip-group]";
