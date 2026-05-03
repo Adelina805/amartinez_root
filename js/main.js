@@ -44,6 +44,44 @@ function updateScrollProgress() {
   progressFill.style.width = `${progress}%`;
 }
 
+// Initialize scroll-triggered animations
+function initializeScrollAnimations() {
+  const animatedElements = document.querySelectorAll(
+    ".animate-on-scroll, .animate-on-scroll-up",
+  );
+
+  if (!animatedElements.length) {
+    return;
+  }
+
+  // Check if Intersection Observer is supported
+  if (!("IntersectionObserver" in window)) {
+    // Fallback: add visible class to all animated elements
+    animatedElements.forEach((el) => {
+      el.classList.add("visible");
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    },
+  );
+
+  animatedElements.forEach((el) => {
+    observer.observe(el);
+  });
+}
+
 // Mouse-following stars effect
 const starsContainer = document.getElementById("stars-container");
 const stars = [];
@@ -117,6 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
   applyTheme(getInitialTheme());
   updateScrollProgress();
   updateStars(); // Start the animation loop
+  initializeScrollAnimations(); // Initialize scroll-triggered animations
 
   // PAGE LOAD ANIMATIONS
   // Rotate in spinning star

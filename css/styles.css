@@ -498,6 +498,69 @@ hero-stars {
     spin-star 40s linear infinite reverse 1.3s;
 }
 
+/* SCROLL-TRIGGERED ANIMATIONS */
+@keyframes slideUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  will-change: opacity, transform;
+}
+
+.animate-on-scroll.visible {
+  animation: slideUpFadeIn 0.7s ease-out forwards;
+  will-change: auto;
+}
+
+@keyframes slideUpIn {
+  from {
+    transform: translateY(40px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-on-scroll-up {
+  transform: translateY(40px);
+  will-change: transform;
+}
+
+.animate-on-scroll-up.visible {
+  animation: slideUpIn 0.7s ease-out forwards;
+  will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+
+  .animate-on-scroll-up {
+    transform: none;
+    will-change: auto;
+  }
+
+  .animate-on-scroll.visible {
+    animation: none;
+  }
+
+  .animate-on-scroll-up.visible {
+    animation: none;
+  }
+}
+
 /* Timeline section slide-in animations */
 @keyframes slide-in-left {
   from {

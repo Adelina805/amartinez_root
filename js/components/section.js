@@ -13,12 +13,12 @@ class TimelineSection extends HTMLElement {
           <path d="M164.377 87.3351L110.027 112.381L99.847 171.353L59.2313 127.402L9.32766e-07 135.944L29.2488 83.7348L2.8216 30.0421L61.5141 41.7258L104.412 -3.59839e-07L111.438 59.4303L164.377 87.3351Z" fill="currentColor" />
         </svg>
         <div class="container">
-          <div class="section-title">
+          <div class="section-title animate-on-scroll-up">
             <h2 class="section-label">${title}</h2>
             <h3 class="section-date">${dates}</h3>
             <div class="divider"></div>
           </div>
-          <div class="section-content">
+          <div class="section-content animate-on-scroll-up">
             ${content}
           </div>
         </div>
